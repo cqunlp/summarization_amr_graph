@@ -1,16 +1,14 @@
-# summarization_amr_graph
+# Structured Neural Summarization
 
-This is the re-implementation for the paper : Toward Abstractive Summarization Using Semantic Representations
+<!-- ## Use GCN or GRN -->
+## step1
 
+the first thing we need to ensure is that the traning process
+1. read arguments and build model (cause the origin version was based on Tensorflow and now we will use Pytorch to achieve the purpose)
+    1. Attention layer (BahdanauAttention or Coverage one)
+    2. Embedder (args: vocabulary, tokens, embedding_size,dropout_rate.. and so on)
+    3. Decoder(basic RNN or others)
+    4. Models(Graph2Sequence or SequenceGraph2Sequence)
 
-We will note our develop step in next few months.
+    so we need define our own Embedder, Decoder and Models.
 
-## Step1
-1. Transform the origin CNN/Daily Mail dataset into AMR format.
-
-    This part will follow the   paper [Automatic Lossless-Summarization](https://www.sciencedirect.com/science/article/pii/S1877050918314522) and its' [repository](https://github.com/ritwikmishra/Lossless-ATS).
-2. the problem is that Lossless-ATS do not use the state-of-the-art models to parse text, and alse use python2.x, we will refine the code in the brach [cnndm_to_amr](https://github.com/cqunlp/summarization_amr_graph/tree/cnndm_to_amr)
-
-##Step2
-1. In this step, we use allennlp and DGL to re-implement the graph-to-sequence model mentioned in [Structured Neural Summarization](https://github.com/CoderPat/structured-neural-summarization)
-2. The code is avaliable in branch [structured_model](https://github.com/cqunlp/summarization_amr_graph/tree/structured_model)
