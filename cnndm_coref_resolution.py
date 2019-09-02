@@ -24,7 +24,10 @@ def coref_resolution(source,target):
 
     return source_doc._.coref_resolved, target_doc._.coref_resolved
 
-    
+def save_file(text,file_name):
+    with open(file_name,'w',encoding='utf-8') as f:
+        f.write(text)
+    f.close
 
 def main():
     arg_parser = argparse.ArgumentParser(description='Input file is article text and abstract text')
@@ -34,8 +37,11 @@ def main():
     args = arg_parser.parse_args()
 
     source, target = coref_resolution(args.source,args.target)
-    print(source)
-    print(target)
+    
+    save_file(source,'source_resolved')
+    save_file(target,'target_resolved')
+    # print(source)
+    # print(target)
 
     
 if __name__ == "__main__":
