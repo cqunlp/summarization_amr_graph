@@ -12,3 +12,6 @@ the first thing we need to ensure is that the traning process
 
     so we need define our own Embedder, Decoder and Models.
 
+    Have done:
+    1. use GGNN from DGL as the Encoder, the next part is Embedding and Reader
+
