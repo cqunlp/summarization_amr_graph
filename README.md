@@ -15,3 +15,6 @@ the first thing we need to ensure is that the traning process
     Have done:
     1. use GGNN from DGL as the Encoder, the next part is Embedding and Reader
 
+2. the preprocessing speed is too slow (avg 20s/file)
+so I have to write a multiprocess tool to speed up that. or if cannot finish in short time, I'll make a distributed tool
+
