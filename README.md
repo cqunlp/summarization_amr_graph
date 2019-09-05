@@ -18,3 +18,14 @@ the first thing we need to ensure is that the traning process
 2. the preprocessing speed is too slow (avg 20s/file)
 so I have to write a multiprocess tool to speed up that. or if cannot finish in short time, I'll make a distributed tool
 
+The origin [repository](https://github.com/CoderPat/structured-neural-summarization) didn't show all the instruction for data preprocessing, but the utils(.py file) did exist here, I tried it and rewrite the instructions below:
+1. clone the [cnn-dailymail](https://github.com/abisee/cnn-dailymail) urls_list repository
+2. rename urls list into this kind `{PREFIX}_{TYPE}.txt`, `PREFIX` include `cnn, dailymail`, `TYPE` include `train,val,test`
+3. split the origin `.story` file into `.article, .abstr`. (you need install docopt)
+`
+python splitfiles.py PREFIX path/to/stories path/to/splited/
+`
+4. use stanford corenlp to obtain the parsed `.xml` file
+`
+
+`
