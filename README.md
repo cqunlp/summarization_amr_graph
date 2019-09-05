@@ -22,10 +22,10 @@ The origin [repository](https://github.com/CoderPat/structured-neural-summarizat
 1. clone the [cnn-dailymail](https://github.com/abisee/cnn-dailymail) urls_list repository
 2. rename urls list into this kind `{PREFIX}_{TYPE}.txt`, `PREFIX` include `cnn, dailymail`, `TYPE` include `train,val,test`
 3. split the origin `.story` file into `.article, .abstr`. (you need install docopt)
-`
-python splitfiles.py PREFIX path/to/stories path/to/splited/
-`
+    ```
+    python splitfiles.py PREFIX path/to/stories path/to/splited/
+    ```
 4. use stanford corenlp to obtain the parsed `.xml` file
-`
-
-`
+    ```
+    ./corenlp.sh -annotators tokenize,ssplit,pos,lemma,ner,parse,depparse,coref -coref.algorithm neural -filelist path/to/filelist.txt outputFormat xml -outputDirectory /path/to/output/xml
+    ```

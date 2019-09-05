@@ -108,5 +108,5 @@ if __name__ == '__main__':
             abstract_path = os.path.join(fold_out_summaries_path, story_id + '.abstr')
             with open(abstract_path, 'w') as f:
                 f.write(abstract+'\n')
-        with open(filelist_path, 'a+') as f:
-            f.write('\n'.join(story_files))
+        # with open(filelist_path, 'a+') as f:
+        #     f.write('\n'.join(story_files))
