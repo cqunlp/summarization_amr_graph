@@ -83,6 +83,8 @@ def queue_count(queue):
         now = queue.qsize()
         print('remain:{},{}/sec'.format(now,(count-now)/60))
         count = now
+        if queue.qsize() == 0:
+            break
 def read_list(file_path) -> Queue:
     queue = Queue()
     with open(file_path, 'r' ,encoding = 'utf-8') as f:
